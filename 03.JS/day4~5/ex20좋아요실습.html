@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        😜👍<span id="number">0</span>
+     </p>
+     <button id="like">🔺좋아요</button>
+     <button id="hate">🔻싫어요</button>
+
+     <script>
+        
+        // ** 좋아요/ 싫어요 버튼 만들기 실습 
+        // 좋아요 버튼 클릭 시, 숫자가 1씩 증가 
+        // 싫어요 버튼 클릭 시, 숫자가 1씩 감소 
+        // 단, 0 밑으로는 내려가지 않도록 할 것 
+
+
+        // STEP 1. 좋아요를 눌렀을 때 호출할 'like'라는 함수 생성
+        // 1-1) like 함수를 생성 
+        // 1-2) console창에 'like function' 출력 
+        
+       const like= ()=>{
+        console.log('like function')
+        let number = parseInt(document.getElementById('number').innerText)
+        number++
+        document.getElementById('number').innerHTML = number
+        console.log(number)
+
+       }
+        
+        // STEP 2. 싫어요를 눌렀을 때 호출할 'hate'라는 함수 생성 
+        // 2-1) hate 함수를 생성 
+        // 2-2) console 창에 'hate function 출력'
+
+        /** 싫어요 눌렀을 때 감소 하는 숫자 */
+        const hate= ()=>{
+            console.log('hate function')
+            let number = parseInt(document.getElementById('number').innerText)
+            if(number>0){
+                number--
+                document.getElementById('number').innerHTML = number
+                console.log(number)               
+            }
+       }
+      
+        // STEP 3. 각각 버튼에 이벤트 
+        // 3-1) 좋아요 버튼을 눌렀을 때, like 함수 호출 
+        // 3-2) 싫어요 버튼을 눌렀을 때, hate 함수 호출 
+
+        let likeBtn = document.getElementById('like')
+        likeBtn.onclick = like
+
+        let hateBtn = document.getElementById('hate')
+        hateBtn.onclick = hate
+
+        // STEP 4. 실제 로직을 작성 
+        // 4-1) like 함수 호출 시, id가 number 인 span태그
+        //      안의 값이 1씩 증가하도록 함수 로직 변경 
+
+
+
+
+        // 4-2) hate 함수 호출 시, id가 number 인 span태그 
+        //      안의 값이 1씩 감소하도록 함수 로직 변경
+
+        // 4-3) 단, 0 이하로는 숫자가 떨어지지 않도록 
+
+        // ** HINT !! 
+        // 1. innerText로 가져온 컨텐츠는 어떤 자료형일까? 
+        // 2. 문자의 형태로 연산을 할 수 있을까? 
+
+
+       
+
+
+
+
+
+
+     </script>
+</body>
+</html>

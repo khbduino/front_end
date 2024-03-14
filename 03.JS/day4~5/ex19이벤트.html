@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="txt">h1태그 컨텐츠</h1>
+    <button onclick="popUp()">직접 작성</button>
+    <button id="btn_han">핸들러용 버튼</button>
+
+    <button id="btn_lis">리스너용 버튼</button>
+    <button id="btn_event">이벤트 객체용 버튼</button>
+
+    <script>
+        // EVENT ! 특정 요소에 원하는 이벤트를 부여해보자
+        // ex) click, mouseover, mouseout, change, ....
+
+        // EventHandler vs eventListener
+        // 1. 이벤트 핸들러 : 하나의 요소당 하나의 이벤트만 부여 가능
+        // 2. 이벤트 리스너 : 하나의 요소당 여러개의 이벤트 부여 가능
+
+        // ** 각각의 버튼들을 클릭 시, id가 'txt'인 요소의 컨텐츠 값을 팝업창으로 띄워줄 것
+
+        // 실습을 위한 준비물 : 팝업창을 출력하는 함수
+        const popUp = ()=>{
+            let h1Tag = document.getElementById('txt')
+            alert(h1Tag.innerText)
+        }
+        const popUp2 = ()=>{
+            let h1Tag = document.getElementById('txt')
+            alert('pop2 :'+h1Tag.innerText)
+        }
+
+        // Case 2) 이벤트 핸들러 (함수가 바뀜)
+        let btn1 = document.getElementById('btn_han')
+        btn1.onclick = popUp
+        btn1.onclick = popUp2
+        
+        // Case 3) 이벤트 리스너 (함수가 여러번 실행함)
+        let btn2 = document.getElementById('btn_lis')
+        btn2.addEventListener('click', popUp)
+        btn2.addEventListener('click', popUp2)
+
+        // ** 함수를 직접 등록하는 경우
+        // 콜백함수 : 특정 시점에만 호출되는 함수
+        // 함수 안에 있는 함수 => 무조건 콜백함수
+        btn2.addEventListener('click', ()=>{
+            alert('직접등록한 함수')
+        })
+
+        // Case 4) 이벤트 객체
+        // 이벤트가 발생하는 타겟과 그 내용을 알 수 있다.
+        // 매개변수를 이용해서 target의 내용을 잡는다.
+        let eventBtn = document.getElementById('btn_event')
+        eventBtn.addEventListener('click', (e)=>{
+            console.log(e.target.innerText)
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // 호이스팅 현상 : 코드가 실행되면 변수, 함수를 미리 저장해준다.
+        // 선언되기 전에 사용하더라도 OK
+        // => 오류가 X -> 협업에 풀편
+        
+        // let 도 호이스팅이 일어나긴 함 
+        // 다만 변수를 TDZ (Temporal Death Zone)에 저장해둠
+        // 선언이 나오기 전까지는 접근을 못하게 만들어주는 것
+        
+        console.log(color)
+        console.log(color2)
+        
+        // 변수 : 데이터를 담을 수 있는 공간
+
+        // (1) var
+        var color = "black" // 선언
+        var color = "pink" // 재선언 가능
+        color = "yellow" // 재할당 가능하다
+        console.log(color)
+
+        // ES6 문법 이후 등장한 새로운 키워드 : let, const
+
+        // (2) let
+        let color2 = "black"
+        // let color2 = "pink" // 재선언 불가능
+        color2 = "yellow" // 재할당 가능
+
+        console.log('let',color2)
+
+        // (3) const
+        // 누군가가 재선언하거나 재할당해서는 안되는 변하지않는 값
+        // ex) 게임회사 만렙, ..
+        const color3 = "black"
+        // color3 = "yellow"
+        console.log('const',color3)
+        // Uncaught TypeError: Assignment to constant variable. : const를 재할당 했을 때 발생하는 오류 코드
+
+        let p1 = 1;
+        let p2 = 1;
+        console.log(p1===p2); // true
+        
+        let o1 = {name:'kim'}
+        let o2 = {name:'kim'}
+        console.log(o1===o2);
+    </script>
+</body>
+</html>

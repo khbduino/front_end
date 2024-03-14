@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name">
+    <button id="btn">변경!</button>
+    <br>
+    <img
+    id = 'imgTag'
+    src= '#'
+    width="200px">
+    <script>
+        // STEP 1. 사진 두개의 이미지 주소를 구한다. ('','')
+        let url1 = "#";
+        let url2 = "#";
+        // STEP 2. '변경' 이라는 버튼을 클릭 시,
+        document.getElementById('btn').addEventListener('click',()=>{
+            let inputText = document.getElementById('name')
+            console.log(inputText.value)
+            if(inputText.value === '피카츄'){
+                let imgTag = document.getElementById('imgTag')
+                imgTag.src=url1;
+            }else if(inputText.value === '피츄'){
+                let imgTag = document.getElementById('imgTag')
+                imgTag.src=url2;
+            }else{
+                alert('잘못입력하셨습니다.')
+            }
+        })
+        // STEP 3. 사용자가 input태그 안에 작성한 내용을 감지 => inputText
+        // STEP 4. console창에 확인용으로 찍어줄 것
+        // STEP 5. '사진1' 이라고 입력시, 사진1 '사진2' 입력시 사진2 
+        //          나머지는 => 잘못입력하셨습니다.
+    </script>
+</body>
+</html>

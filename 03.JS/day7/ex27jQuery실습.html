@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <span id="num">0</span>
+    <br>
+    <button id="plus">+1🔺</button>
+    <button id="minus">-1🔻</button>
+
+    <script>
+        // 카운터 만들기 실습 
+        // 1. plus 버튼을 눌렀을 때 숫자가 1씩 증가 
+        // 2. minus 버튼을 눌렀을 때 숫자가 1씩 감소 
+        // 이 때, 0 밑으로는 숫자가 떨어지지 않도록 할 것 
+        // ** 조건 ! : v-JS 문법이 아닌, jQuery 문법만을 이용해서 문제를 풀 것 
+
+        let num = $('#num')
+        let cnt=0;
+
+        $('#plus').click(()=>{
+            cnt++
+            num.text(cnt)
+        })
+        $('#minus').click(()=>{
+            if(num.text() > 0){
+                cnt--
+                num.text(cnt)
+            }
+        })
+
+    </script>
+</body>
+</html>

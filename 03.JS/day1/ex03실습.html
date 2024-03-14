@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 1. 사용자의 이름을 입력받아준다. ('이름을 입력하시오')
+        const name = prompt('이름을 입력하시오')
+        // 2. 사용자에게 신청곡을 입력받는다. ('신청곡을 작성해주세요.')
+        const song = prompt('신청곡을 작성해주세요.')
+        // 3. console창에 출력은
+        //      "xxx님이 신청하신 노래는 xxx 입니다."
+
+        //  변수와 text 를 이어서 작성하는 방법 3가지
+        //  1) 쉼표
+        console.log(name,'님이 신청하신 노래는 ', song ,'입니다')
+        //  2) + 연산
+        console.log(name +'님이 신청하신 노래는 '+ song +'입니다')
+        //  3) ` : 백틱    `${}`
+        console.log(`${name}님이 신청하신 노래는 ${song} 입니다.`)
+
+        // 4. 다 되면 캡처해서 단톡방 + 팀원 도와주기
+
+    </script>
+</body>
+</html>

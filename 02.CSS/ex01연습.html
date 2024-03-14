@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        css 코드를 작성하기 위해서는 반드시 head영역에 <style>태그를 선언 해야한다.
+            why?) css와 html은 다른 언어이기 때문에
+        기본문법
+            h1(선택자){
+                속성 : 속성값;
+            }
+           * 주의점
+            - 반드시 속성값을 입력한 다음에 ; 을 찍어줘야 한다. 
+            - 선택자 안에 다른 선택자를 선택하지 못한다.
+     -->
+    <!-- 
+        폰트를 설정하는 속성
+        1. 폰트를 변경할 때는 font-family
+            - 폰트를 복수개를 적는 경우가 대부분
+            - 폰트가 없는 경우 "비슷한" 다른 폰트로 대체하기 위해서
+            - 복수개의 폰트를 넣을 떄는, 비슷한 형태의 폰트를 작성해라
+
+        2. 폰트의 크기를 변경할 때는 font-size
+        3. 폰트의 두께를 변경할 때는 font-weight
+            - <b>의 역할을 디자인으로 만든 것
+                
+        4. 폰트의 모습을 변경할 때는 font-style
+            - <i>의 역할을 디자인으로 만든 것
+     -->
+    <style>
+        h1{
+            color : blue;
+            font-size : 50px;
+        }
+        p{
+            color:red;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 100px;
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>첫번째 h1</h1>
+    <h1>두번째 h1</h1>
+    <p>첫번째 p</p>
+    <p>두번째 p</p>
+</body>
+</html>
